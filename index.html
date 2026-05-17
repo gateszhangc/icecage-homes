@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICE CAGE FIGHTING | Nordic Combat Sports Events — MMA, Boxing, Muay Thai</title>
+  <meta name="description" content="ICE CAGE FIGHTING brings together top-level MMA, boxing, Muay Thai, and kickboxing in sold-out arena events across Finland. Experience premium combat sports entertainment.">
+  <meta name="keywords" content="ICE CAGE, Ice Cage Fighting, MMA Finland, boxing event, Muay Thai, kickboxing, combat sports, Nokia Arena, Gatorade Center, fight night">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <meta property="og:title" content="ICE CAGE FIGHTING | Nordic Combat Sports Events">
+  <meta property="og:description" content="Bringing together top-level MMA, boxing, Muay Thai, and kickboxing in sold-out arena events across Finland.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="favicon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #0a0e17;
+      color: #e0e6f0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: #90e0ef; text-decoration: none; transition: color 0.3s; }
+    a:hover { color: #00d4ff; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== ICE COLD GRADIENT BACKGROUND ===== */
+    .bg-ice {
+      background: linear-gradient(135deg, #0a0e17 0%, #0f1a2e 30%, #0d1f33 60%, #0a0e17 100%);
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(10, 14, 23, 0.85);
+      border-bottom: 1px solid rgba(0, 180, 216, 0.15);
+      transition: background 0.3s;
+    }
+    nav {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo-text {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #00d4ff, #90e0ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #90b4d4;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #00d4ff; }
+    .nav-cta {
+      background: linear-gradient(135deg, #00d4ff, #0077b6);
+      color: #fff !important;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+    }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #90e0ef;
+      margin: 5px 0;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 24px 80px;
+      text-align: center;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+    }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .hero-particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #00d4ff;
+      border-radius: 50%;
+      opacity: 0;
+      animation: floatParticle 8s infinite;
+    }
+    @keyframes floatParticle {
+      0% { opacity: 0; transform: translateY(100vh) scale(0); }
+      20% { opacity: 0.6; }
+      80% { opacity: 0.6; }
+      100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-radius: 50px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #90e0ef;
+      margin-bottom: 24px;
+      background: rgba(0, 212, 255, 0.05);
+    }
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #00d4ff, #90e0ef, #00b4d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero h1 .outline-text {
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(0, 212, 255, 0.4);
+    }
+    .hero p {
+      font-size: clamp(16px, 2vw, 22px);
+      color: #7a9bb5;
+      max-width: 680px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #00d4ff, #0077b6);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 212, 255, 0.35);
+      color: #fff;
+    }
+    .btn-secondary {
+      display: inline-block;
+      padding: 16px 40px;
+      background: transparent;
+      color: #90e0ef;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .btn-secondary:hover {
+      background: rgba(0, 212, 255, 0.08);
+      border-color: #00d4ff;
+      color: #00d4ff;
+    }
+
+    /* Animated ring under hero */
+    .hero-ring {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(0, 212, 255, 0.06);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: ringPulse 8s ease-in-out infinite;
+    }
+    .hero-ring-2 {
+      width: 800px;
+      height: 800px;
+      animation-delay: 2s;
+    }
+    .hero-ring-3 {
+      width: 400px;
+      height: 400px;
+      animation-delay: 4s;
+    }
+    @keyframes ringPulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section { padding: 100px 24px; }
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #00d4ff;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .section-title {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .section-subtitle {
+      font-size: 18px;
+      color: #7a9bb5;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+    .section-title .highlight {
+      background: linear-gradient(135deg, #00d4ff, #90e0ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== EVENTS / COUNTDOWN ===== */
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .event-card {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), rgba(0, 119, 182, 0.08));
+      border: 1px solid rgba(0, 180, 216, 0.12);
+      border-radius: 16px;
+      padding: 36px;
+      transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 212, 255, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 212, 255, 0.08);
+    }
+    .event-date {
+      font-size: 14px;
+      color: #00d4ff;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .event-name {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .event-location {
+      color: #7a9bb5;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .event-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 4px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #90e0ef;
+      margin-top: 12px;
+    }
+    .event-highlight {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(0, 119, 182, 0.15));
+      border-color: rgba(0, 212, 255, 0.2);
+    }
+    .countdown {
+      display: flex;
+      gap: 24px;
+      margin: 24px 0;
+    }
+    .countdown-item {
+      text-align: center;
+    }
+    .countdown-num {
+      font-size: 42px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #00d4ff, #90e0ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .countdown-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5a7a95;
+      margin-top: 4px;
+    }
+
+    /* ===== FIGHTERS ===== */
+    .fighters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .fighter-card {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.04), rgba(0, 119, 182, 0.06));
+      border: 1px solid rgba(0, 180, 216, 0.1);
+      border-radius: 14px;
+      padding: 28px;
+      text-align: center;
+      transition: transform 0.4s, border-color 0.4s;
+    }
+    .fighter-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 212, 255, 0.25);
+    }
+    .fighter-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, #00b4d8, #0077b6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 900;
+      color: #fff;
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+    }
+    .fighter-name {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .fighter-record {
+      color: #5a7a95;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .fighter-style {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 12px;
+      background: rgba(0, 212, 255, 0.08);
+      border-radius: 4px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #90e0ef;
+    }
+
+    /* ===== VS MATCHUPS ===== */
+    .matchups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .matchup-card {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.04), rgba(0, 119, 182, 0.06));
+      border: 1px solid rgba(0, 180, 216, 0.1);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.4s, border-color 0.4s;
+    }
+    .matchup-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 212, 255, 0.2);
+    }
+    .matchup-weight {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #00d4ff;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .matchup-fighters {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .matchup-fighter {
+      flex: 1;
+    }
+    .matchup-fighter .name {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .matchup-fighter .origin {
+      font-size: 12px;
+      color: #5a7a95;
+    }
+    .matchup-vs {
+      font-size: 20px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #00d4ff, #90e0ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .about-text p {
+      color: #7a9bb5;
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.06), rgba(0, 119, 182, 0.08));
+      border: 1px solid rgba(0, 180, 216, 0.1);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #00d4ff, #90e0ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: #5a7a95;
+      margin-top: 4px;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      max-width: 800px;
+      margin: 48px auto 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(0, 180, 216, 0.1);
+      padding: 20px 0;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 600;
+      color: #c8d6e5;
+      transition: color 0.3s;
+    }
+    .faq-question:hover { color: #00d4ff; }
+    .faq-question .icon {
+      font-size: 20px;
+      color: #00d4ff;
+      transition: transform 0.3s;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      color: #7a9bb5;
+      line-height: 1.7;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-top: 16px;
+    }
+    .faq-item.active .faq-question .icon {
+      transform: rotate(45deg);
+    }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.08), rgba(0, 119, 182, 0.12));
+      border: 1px solid rgba(0, 180, 216, 0.15);
+      border-radius: 20px;
+      padding: 60px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .newsletter h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .newsletter p {
+      color: #7a9bb5;
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      border-radius: 8px;
+      color: #e0e6f0;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .newsletter-form input:focus {
+      border-color: #00d4ff;
+    }
+    .newsletter-form input::placeholder { color: #5a7a95; }
+    .newsletter-form button {
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #00d4ff, #0077b6);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: transform 0.3s, box-shadow 0.3s;
+      white-space: nowrap;
+    }
+    .newsletter-form button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+    }
+
+    /* ===== PARTNERS ===== */
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .partner-item {
+      padding: 20px 32px;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.04), rgba(0, 119, 182, 0.06));
+      border: 1px solid rgba(0, 180, 216, 0.08);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5a7a95;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid rgba(0, 180, 216, 0.1);
+      padding: 60px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand p {
+      color: #5a7a95;
+      font-size: 14px;
+      margin-top: 12px;
+      max-width: 280px;
+      line-height: 1.7;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #90e0ef;
+      margin-bottom: 16px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a {
+      color: #5a7a95;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    .footer-col ul li a:hover { color: #00d4ff; }
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0, 180, 216, 0.2);
+      border-radius: 8px;
+      color: #5a7a95;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    .footer-social a:hover {
+      border-color: #00d4ff;
+      color: #00d4ff;
+      background: rgba(0, 212, 255, 0.05);
+    }
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(0, 180, 216, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom p {
+      color: #3a5a75;
+      font-size: 13px;
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom-links a {
+      color: #3a5a75;
+      font-size: 13px;
+    }
+    .footer-bottom-links a:hover { color: #90e0ef; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 14, 23, 0.98);
+        padding: 24px;
+        border-bottom: 1px solid rgba(0, 180, 216, 0.1);
+        gap: 16px;
+        align-items: stretch;
+        text-align: center;
+      }
+      .events-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter { padding: 32px 20px; }
+      .matchups-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-inner { grid-template-columns: 1fr; }
+      .countdown { gap: 12px; }
+      .countdown-num { font-size: 28px; }
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="logo.svg" alt="ICE CAGE FIGHTING" height="40">
+    </a>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#events">Events</a></li>
+      <li><a href="#fighters">Fighters</a></li>
+      <li><a href="#matchups">Matchups</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://mirofish.my/" class="nav-cta" target="_blank" rel="noopener noreferrer">Live Stream</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero bg-ice" id="home">
+  <div class="hero-bg">
+    <div class="hero-particles" id="particles"></div>
+  </div>
+  <div class="hero-ring"></div>
+  <div class="hero-ring hero-ring-2"></div>
+  <div class="hero-ring hero-ring-3"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Next Event — September 19, 2026</div>
+    <h1>
+      <span class="outline-text">Where</span><br>
+      <span class="gradient-text">Warriors</span><br>
+      <span class="outline-text">Are Made</span>
+    </h1>
+    <p>ICE CAGE FIGHTING — the Nordic region's premier combat sports promotion. Experience world-class MMA, boxing, Muay Thai, and kickboxing live in sold-out arenas across Finland.</p>
+    <div class="hero-buttons">
+      <a href="https://mirofish.my/" target="_blank" rel="noopener noreferrer" class="btn-primary">Watch Live Stream</a>
+      <a href="#events" class="btn-secondary">View Events</a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" style="padding-top: 100px;">
+  <div class="section-inner fade-in">
+    <span class="section-label">Events</span>
+    <h2 class="section-title">Upcoming &amp; <span class="highlight">Past Events</span></h2>
+    <p class="section-subtitle">From Nokia Arena to Gatorade Center — ICE CAGE brings top-tier combat sports to Finland's biggest venues.</p>
+    <div class="events-grid">
+      <div class="event-card event-highlight">
+        <div class="event-date">September 19, 2026</div>
+        <div class="event-name">ICE CAGE 8</div>
+        <div class="event-location">Gatorade Center, Turku</div>
+        <div class="countdown" id="countdown">
+          <div class="countdown-item"><div class="countdown-num" id="days">00</div><div class="countdown-label">Days</div></div>
+          <div class="countdown-item"><div class="countdown-num" id="hours">00</div><div class="countdown-label">Hours</div></div>
+          <div class="countdown-item"><div class="countdown-num" id="minutes">00</div><div class="countdown-label">Minutes</div></div>
+          <div class="countdown-item"><div class="countdown-num" id="seconds">00</div><div class="countdown-label">Seconds</div></div>
+        </div>
+        <a href="https://mirofish.my/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:13px;">Get Tickets</a>
+      </div>
+      <div class="event-card">
+        <div class="event-date">May 16, 2026</div>
+        <div class="event-name">ICE CAGE 7</div>
+        <div class="event-location">Nokia Arena, Tampere</div>
+        <span class="event-tag">Sold Out</span>
+      </div>
+      <div class="event-card">
+        <div class="event-date">December 26, 2025</div>
+        <div class="event-name">ICE CAGE 6</div>
+        <div class="event-location">Metro Areena, Espoo</div>
+        <span class="event-tag">Sold Out</span>
+      </div>
+      <div class="event-card">
+        <div class="event-date">September 6, 2025</div>
+        <div class="event-name">ICE CAGE 5</div>
+        <div class="event-location">Gatorade Center, Turku</div>
+        <span class="event-tag">Sold Out</span>
+      </div>
+      <div class="event-card">
+        <div class="event-date">May 3, 2025</div>
+        <div class="event-name">ICE CAGE 4</div>
+        <div class="event-location">Helsingin jäähalli, Helsinki</div>
+        <span class="event-tag">Sold Out</span>
+      </div>
+      <div class="event-card">
+        <div class="event-date">December 28, 2024</div>
+        <div class="event-name">ICE CAGE 3</div>
+        <div class="event-location">Energia Areena, Vantaa</div>
+        <span class="event-tag">Sold Out</span>
+      </div>
+      <div class="event-card">
+        <div class="event-date">May 11, 2024</div>
+        <div class="event-name">ICE CAGE 2</div>
+        <div class="event-location">Tikkurilan Areena</div>
+        <span class="event-tag">Sold Out</span>
+      </div>
+      <div class="event-card">
+        <div class="event-date">December 16, 2023</div>
+        <div class="event-name">ICE CAGE 1</div>
+        <div class="event-location">Ahjo Training Center</div>
+        <span class="event-tag">Sold Out</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIGHTERS -->
+<section id="fighters" class="bg-ice">
+  <div class="section-inner fade-in">
+    <span class="section-label">Fighters</span>
+    <h2 class="section-title">Elite <span class="highlight">Roster</span></h2>
+    <p class="section-subtitle">The best Finnish and international combat athletes compete under the ICE CAGE banner.</p>
+    <div class="fighters-grid">
+      <div class="fighter-card"><div class="fighter-avatar">MA</div><div class="fighter-name">Makwan Amirkhani</div><div class="fighter-record">Pro MMA · 70.3 kg · 178 cm</div><span class="fighter-style">MMA</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">OS</div><div class="fighter-name">Olli Santalahti</div><div class="fighter-record">Pro MMA · 83.9 kg · 183 cm</div><span class="fighter-style">MMA</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">SB</div><div class="fighter-name">Sani Brännfors</div><div class="fighter-record">Pro MMA · 56.7 kg · 158 cm</div><span class="fighter-style">MMA</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">AH</div><div class="fighter-name">Abdul Hussein</div><div class="fighter-record">Pro Boxing · 68.0 kg · 166 cm</div><span class="fighter-style">Boxing</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">NK</div><div class="fighter-name">Niko Korventaus</div><div class="fighter-record">Pro Boxing · 75.0 kg · 183 cm</div><span class="fighter-style">Boxing</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">RK</div><div class="fighter-name">Roger Karimus</div><div class="fighter-record">Pro Boxing · 120.0 kg · 196 cm</div><span class="fighter-style">Boxing</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">MG</div><div class="fighter-name">Magamed Gadiev</div><div class="fighter-record">Pro Muay Thai · 86.0 kg · 194 cm</div><span class="fighter-style">Muay Thai</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">AK</div><div class="fighter-name">Abdifatah Khalif</div><div class="fighter-record">Pro Muay Thai · 63.5 kg · 178 cm</div><span class="fighter-style">Muay Thai</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">AL</div><div class="fighter-name">Antti Lauronen</div><div class="fighter-record">Pro Kickboxing · 63.5 kg · 171 cm</div><span class="fighter-style">Kickboxing</span></div>
+      <div class="fighter-card"><div class="fighter-avatar">LS</div><div class="fighter-name">Lauri Suomela</div><div class="fighter-record">Pro Kickboxing · 65.0 kg · 182 cm</div><span class="fighter-style">Kickboxing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MATCHUPS -->
+<section id="matchups">
+  <div class="section-inner fade-in">
+    <span class="section-label">Fight Card</span>
+    <h2 class="section-title">ICE CAGE 7 <span class="highlight">Matchups</span></h2>
+    <p class="section-subtitle">Every fight delivers intensity. Every matchup tells a story.</p>
+    <div class="matchups-grid">
+      <div class="matchup-card"><div class="matchup-weight">Pro Boxing · +80 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Makwan Amirkhani</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Stagala</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Title Fight · Pro MMA · 83.9 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Olli Santalahti</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Andre Fialho</div><div class="origin">Portugal</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro Muay Thai · 86 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Magamed Gadiev</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Jussi Pirttikangas</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro MMA · 56.7 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Sani Brännfors</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Justine Kish</div><div class="origin">USA</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro MMA · 83.9 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Brayan Aspegren</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Bartosz Kwiatkowski</div><div class="origin">Poland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Boxing · 68 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Abdul Hussein</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Aapo Rovanperä</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro MMA · 75 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Aleksi Mäntykivi</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Marcin Jabłoński</div><div class="origin">Poland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro Boxing · 75 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Niko Korventaus</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Volodymyr Holubiev</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro Boxing · +100 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Roger Karimus</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Toni Valtonen</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro MMA · 65 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Verneri Hakkinen</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Karvann Ahmadi</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro Muay Thai · 63.5 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Salar Sharifi</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Abdifatah Khalif</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Amateur MMA · 61.2 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Rikhard Kallioniemi</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Matias Tuokkola</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro MMA · 65.8 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Rasmus Vauhkonen</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Yasir Uyar</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro Kickboxing · 63.5 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Antti Lauronen</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Anton Väisänen</div><div class="origin">Finland</div></div></div></div>
+      <div class="matchup-card"><div class="matchup-weight">Pro Kickboxing · 70 kg</div><div class="matchup-fighters"><div class="matchup-fighter"><div class="name">Lauri Suomela</div><div class="origin">Finland</div></div><div class="matchup-vs">VS</div><div class="matchup-fighter"><div class="name">Kristoffer Björkskog</div><div class="origin">Finland</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="bg-ice">
+  <div class="section-inner fade-in">
+    <span class="section-label">About</span>
+    <h2 class="section-title">Nordic Combat Sports <span class="highlight">at Its Finest</span></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>ICE CAGE FIGHTING is a Finnish combat sports promotion company that brings together top-level mixed martial arts, boxing, Thai boxing, and kickboxing matches. Since our first event in December 2023, we have offered the public high-level and unforgettable combat sports evenings, where the atmosphere and intensity of the matches are guaranteed.</p>
+        <p>We combine combat sports, spectacular show elements, and high-quality production into an exciting package that offers the audience more than just fights. We create events where entertainment and top-level sports complement each other. Interest in our events is strong — all events have been sold out, with capacities of up to 9,000 spectators.</p>
+        <p>ICE CAGE is more than a fight night — it is a movement. Join us as we continue to build Finland's most exciting combat sports event and bring the heat to the biggest arenas in the Nordic region.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card"><div class="stat-num">7</div><div class="stat-label">Events Held</div></div>
+        <div class="stat-card"><div class="stat-num">9,000</div><div class="stat-label">Max Capacity</div></div>
+        <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Sold Out Shows</div></div>
+        <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Combat Sports</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section>
+  <div class="section-inner fade-in" style="text-align:center;">
+    <span class="section-label">Partners</span>
+    <h2 class="section-title">Trusted by <span class="highlight">Industry Leaders</span></h2>
+    <div class="partners-grid">
+      <div class="partner-item">Nokia Arena</div>
+      <div class="partner-item">Gatorade Center</div>
+      <div class="partner-item">Metro Areena</div>
+      <div class="partner-item">Lippu.fi</div>
+      <div class="partner-item">Nordic Host</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="bg-ice">
+  <div class="section-inner fade-in">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+    <div class="faq-list">
+      <div class="faq-item active">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What is ICE CAGE FIGHTING?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">We are a Finnish combat sports promotion company that brings together top-level mixed martial arts, boxing, Thai boxing, and kickboxing matches. Since our first event in December 2023, we have offered the public high-level and unforgettable combat sports evenings, where the atmosphere and intensity of the matches are guaranteed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What makes ICE CAGE events special?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">We combine combat sports, spectacular show elements, and high-quality production into an exciting package that offers the audience more than just fights. We create events where entertainment and top-level sports complement each other. All events have been sold out, with capacities of up to 9,000 spectators.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>What sports and matches can you expect?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">We combine professional fights in MMA, boxing, kickboxing, and Thai boxing under the same event, building diverse and entertaining fight cards featuring the best fighters from different combat sports.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Is there a live stream available?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">Yes. We offer live streaming of all our events with top-notch camera production that conveys the intensity of the matches and the atmosphere of the event to home viewers. Live streaming is designed for those who cannot attend in person but want to experience the event in real time.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Who can attend ICE CAGE events?</span>
+          <span class="icon">+</span>
+        </div>
+        <div class="faq-answer">Our event is aimed at audiences of all ages. You can come alone, with your family, or with a group of friends — we offer an experience for children, young people, and adults alike. For companies, groups, and VIP audiences, we also offer VIP boxes and Premium Lounge packages.</div>
+      </div>
+    </div>
+    <!-- Newsletter -->
+    <div class="newsletter">
+      <h3>Stay in the Loop</h3>
+      <p>Subscribe to the ICE CAGE newsletter for exclusive updates on upcoming events, pre-sale opportunities, and special offers available only to members.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault();alert('Thank you for subscribing!');">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.svg" alt="ICE CAGE FIGHTING" height="36">
+      <p>The Nordic region's premier combat sports promotion. Bringing together MMA, boxing, Muay Thai, and kickboxing in sold-out arena events across Finland.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="YouTube">YT</a>
+        <a href="#" aria-label="TikTok">TT</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Events</h4>
+      <ul>
+        <li><a href="#">ICE CAGE 8</a></li>
+        <li><a href="#">ICE CAGE 7</a></li>
+        <li><a href="#">ICE CAGE 6</a></li>
+        <li><a href="#">ICE CAGE 5</a></li>
+        <li><a href="#">ICE CAGE 4</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#fighters">Fighters</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#">Ticket Info</a></li>
+        <li><a href="#">Online Store</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@icecage.fi">info@icecage.fi</a></li>
+        <li><a href="#">Become a Partner</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Payment</a></li>
+        <li><a href="#">Delivery Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 ICE CAGE FIGHTING Oy. All Rights Reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+    for (let i = 0; i < 40; i++) {
+      const p = document.createElement('div');
+      p.className = 'hero-particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDelay = Math.random() * 8 + 's';
+      p.style.animationDuration = (6 + Math.random() * 6) + 's';
+      p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
+      container.appendChild(p);
+    }
+  })();
+
+  function updateCountdown() {
+    const target = new Date('2026-09-19T18:00:00+03:00');
+    const now = new Date();
+    const diff = Math.max(0, target - now);
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('days').textContent = String(d).padStart(2, '0');
+    document.getElementById('hours').textContent = String(h).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  function toggleFaq(el) {
+    el.parentElement.classList.toggle('active');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelector('.nav-links')?.classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>

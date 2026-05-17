@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <defs>
+    <linearGradient id="logoIce" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0077b6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoIceLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#90e0ef;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00b4d8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Ice crystal emblem -->
+  <g transform="translate(20, 10)">
+    <path d="M40 10 L44 32 L64 26 L53 40 L74 54 L48 46 L50 70 L40 50 L30 70 L32 46 L6 54 L27 40 L16 26 L36 32 Z" fill="url(#logoIce)" opacity="0.9"/>
+    <circle cx="40" cy="40" r="10" fill="url(#logoIceLight)" opacity="0.8"/>
+  </g>
+  <!-- Text -->
+  <text x="105" y="55" font-family="'Arial Black', 'Impact', sans-serif" font-size="38" font-weight="900" fill="white" letter-spacing="3">ICE</text>
+  <text x="105" y="90" font-family="'Arial Black', 'Impact', sans-serif" font-size="38" font-weight="900" fill="url(#logoIce)" letter-spacing="3">CAGE</text>
+  <text x="222" y="72" font-family="Arial, sans-serif" font-size="12" fill="#90e0ef" letter-spacing="6" text-anchor="start">FIGHTING</text>
+  <line x1="222" y1="78" x2="380" y2="78" stroke="url(#logoIce)" stroke-width="1" opacity="0.6"/>
+  <!-- Slogan -->
+  <text x="222" y="95" font-family="Arial, sans-serif" font-size="9" fill="#90e0ef" letter-spacing="3" text-anchor="start">PREMIUM COMBAT SPORTS</text>
+</svg>
